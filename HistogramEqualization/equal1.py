@@ -51,33 +51,30 @@ def calHist(img):
 
 img_eq = HistEqualization(img)
 
-#Show original image
+#Show original and equalized image
 plt.figure(figsize=(12, 6))
 plt.subplot(2, 2, 1)
 plt.imshow(img, cmap='gray', interpolation='nearest')
 plt.title('Original Image')
 plt.axis('off')
 
-#Show equalized image
 plt.subplot(2, 2, 2)
 plt.imshow(img_eq, cmap='gray', interpolation='nearest')
 plt.title('Equalized Image')
 plt.axis('off')
 
-#Show histogram of Original Image
+
 hist1 = calHist(img)
 plt.subplot(2, 2, 3)
 plt.bar(range(256), hist1, color ='gray')
-plt.title('Grayscale Histogram of Original image')
+plt.title('Grayscale Histogram of Old image')
 plt.xlabel('Pixel value')
 plt.ylabel('Frequency')
 
-
-#Show histogram of Equalized Image
 hist2 = calHist(img_eq)
 plt.subplot(2, 2, 4)
 plt.bar(range(256), hist2, color ='gray')
-plt.title('Grayscale Histogram of Equalized image')
+plt.title('Grayscale Histogram of Equalization image')
 plt.xlabel('Pixel value')
 plt.ylabel('Frequency')
 
